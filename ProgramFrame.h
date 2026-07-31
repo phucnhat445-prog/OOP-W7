@@ -1,3 +1,7 @@
+#pragma once
+
+#include <iosfwd>
+
 class ProgramFrame {
 protected:
     virtual void startMessage(std::ostream& os) const;
