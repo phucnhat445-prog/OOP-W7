@@ -2,7 +2,7 @@
 #include <iostream>
 class Fraction {
 private:
-    int numerator, denominator;
+    int tuso, mauso;
 public:
     Fraction(int n = 0, int d = 1);
 
