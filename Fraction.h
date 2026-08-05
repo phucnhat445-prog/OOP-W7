@@ -10,4 +10,5 @@ public:
     bool operator<(const Fraction& other) const;
 
     friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
+    friend std::istream& operator>>(std::istream& is, Fraction& f);
 };

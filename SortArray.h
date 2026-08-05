@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <chrono>
+#include <string>
 
 template <typename T>
 class SortArray {
@@ -11,22 +11,28 @@ protected:
     virtual void doSort() = 0;
 
 public:
-    SortArray(const std::vector<T>& arr) : array(arr) {}
+
+    SortArray(const std::vector<T>& arr = std::vector<T>()) : array(arr) {}
     virtual ~SortArray() = default;
+
+    virtual std::string name() const = 0;
+
+    void Sort(std::vector<T>& inputData) {
+        this->array = inputData;
+        doSort();
+
+
+        inputData = this->array;
+    }
 
     void runTest() {
         std::cout << "Truoc khi sap xep: ";
         printArray();
 
-        auto start = std::chrono::high_resolution_clock::now();
         doSort();
-        auto end = std::chrono::high_resolution_clock::now();
 
         std::cout << "Sau khi sap xep:   ";
         printArray();
-
-        std::chrono::duration<double, std::milli> duration = end - start;
-        std::cout << "Thoi gian chay: " << duration.count() << " ms\n\n";
     }
 
     void printArray() const {

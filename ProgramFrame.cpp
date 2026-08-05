@@ -6,18 +6,18 @@
 ProgramFrame::~ProgramFrame() = default;
 
 void ProgramFrame::startMessage(std::ostream& os) const {
-    os << "Hãy nhập dữ liệu.\n";
+    os << "Nhap du lieu.\n";
 }
 
 void ProgramFrame::errorMessage(std::ostream& os) const {
-    os << "Dữ liệu không hợp lệ. Vui lòng nhập lại.\n";
+    os << "Du lieu khong hop le, nhap lai.\n";
 }
 
 bool ProgramFrame::askContinue(
     std::istream& is,
     std::ostream& os
 ) const {
-    os << "Bạn có muốn tiếp tục với cùng kiểu dữ liệu và thuật toán không? (c/k): ";
+    os << "Ban co muon tiep tuc (c/k): ";
 
     char choice;
     is >> choice;

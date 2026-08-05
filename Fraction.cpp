@@ -14,3 +14,8 @@ std::ostream& operator<<(std::ostream& os, const Fraction& f) {
     os << f.tuso << "/" << f.mauso;
     return os;
 }
+
+std::istream& operator>>(std::istream& is, Fraction& f) {
+    is >> f.tuso >> f.mauso;
+    return is;
+}

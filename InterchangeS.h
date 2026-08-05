@@ -1,5 +1,6 @@
 #pragma once
 #include "SortArray.h"
+#include <utility> 
 
 template <typename T>
 class InterchangeS : public SortArray<T> {
@@ -15,6 +16,10 @@ protected:
     }
 
 public:
-    InterchangeS(const std::vector<T>& arr) : SortArray<T>(arr) {}
+    InterchangeS(const std::vector<T>& arr = std::vector<T>()) : SortArray<T>(arr) {}
     virtual ~InterchangeS() = default;
+
+    std::string name() const override {
+        return "Interchange Sort";
+    }
 };

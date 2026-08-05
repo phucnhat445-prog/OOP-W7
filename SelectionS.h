@@ -1,12 +1,12 @@
 #pragma once
 #include "SortArray.h"
+#include <utility>
 
 template <typename T>
 class SelectionS : public SortArray<T> {
 protected:
     void doSort() override {
         int n = this->array.size();
-
         for (int i = 0; i < n - 1; i++) {
             int minIdx = i;
             for (int j = i + 1; j < n; j++) {
@@ -19,6 +19,10 @@ protected:
     }
 
 public:
-    SelectionS(const std::vector<T>& arr) : SortArray<T>(arr) {}
+    SelectionS(const std::vector<T>& arr = std::vector<T>()) : SortArray<T>(arr) {}
     virtual ~SelectionS() = default;
+
+    std::string name() const override {
+        return "Selection Sort";
+    }
 };

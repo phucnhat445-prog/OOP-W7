@@ -6,7 +6,6 @@ class InsertionS : public SortArray<T> {
 protected:
     void doSort() override {
         int n = this->array.size();
-
         for (int i = 1; i < n; i++) {
             T key = this->array[i];
             int j = i - 1;
@@ -19,6 +18,10 @@ protected:
     }
 
 public:
-    InsertionS(const std::vector<T>& arr) : SortArray<T>(arr) {}
+    InsertionS(const std::vector<T>& arr = std::vector<T>()) : SortArray<T>(arr) {}
     virtual ~InsertionS() = default;
+
+    std::string name() const override {
+        return "Insertion Sort";
+    }
 };

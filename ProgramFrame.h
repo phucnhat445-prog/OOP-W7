@@ -22,6 +22,5 @@ protected:
 public:
     virtual ~ProgramFrame();
 
-    // Template Method: lớp cha cố định trình tự thực hiện.
     void run(std::istream& is, std::ostream& os);
 };

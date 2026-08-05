@@ -21,19 +21,20 @@ private:
 
 protected:
     void startMessage(std::ostream& os) const override {
-        os << "\nKiểu dữ liệu: " << typeName << '\n';
+        os << "\nKieu du lieu: " << typeName << '\n';
 
         if (algorithm != nullptr) {
-            os << "Thuật toán đang sử dụng: "
-               << algorithm->name()
-               << '\n';
-        } else {
-            os << "Chưa có thuật toán sắp xếp.\n";
+            os << "Thuat toan dang su dung: "
+                << algorithm->name()
+                << '\n';
+        }
+        else {
+            os << "Chua co thuat toan sap xep.\n";
         }
 
-        os << "Nhập số lượng phần tử n, sau đó nhập lần lượt n phần tử.\n";
+        os << "Nhap so luong phan tu n, sau do nhap n phan tu.\n";
         os << inputHint << '\n';
-        os << "Dữ liệu của bạn: ";
+        os << "Du lieu cua ban: ";
     }
 
     void Input(std::istream& is) override {
@@ -69,7 +70,7 @@ protected:
     }
 
     void Output(std::ostream& os) const override {
-        os << "Mảng sau khi sắp xếp: ";
+        os << "Mang sau khi sort: ";
 
         for (const T& value : data) {
             os << value << ' ';
@@ -85,9 +86,9 @@ public:
         std::string inputHint
     )
         : algorithm(algorithm),
-          typeName(std::move(typeName)),
-          inputHint(std::move(inputHint)),
-          inputIsValid(false) {
+        typeName(std::move(typeName)),
+        inputHint(std::move(inputHint)),
+        inputIsValid(false) {
     }
 
     ~SATest() override {
